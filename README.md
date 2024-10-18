@@ -25,6 +25,7 @@ Pada Pada
 ### Step 7: Commit your changes
 `git commit -m "<commit message>"`  
 **Please write the commit message clearly**
+
 ### Step 8: Checkout to main branch
 `git checkout main `
 ### Step 9: Pull the newest data
@@ -33,14 +34,11 @@ Pada Pada
 `git checkout <your local branch>`
 ### Step 11: Merge main to your local branch
 `git merge main`
-### Step 8: Push to your remote branch
-`git push -u origin <your student ID>`
 
 ---
 
 ## Pull Request
 If you have done your work and want to merge it into remote main branch, go to Github Website and do the following steps.
-
 ### Step 1: Go to "Pull requests"
 ![alt text](image.png)
 ### Step 2: Click "New pull request"
