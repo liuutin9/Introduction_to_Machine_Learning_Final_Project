@@ -5,10 +5,13 @@ import soundfile as sf
 from alive_progress import alive_bar
 
 # 路徑設定
-src_mixed_dir = "../classified_sound_1115/nature/mixed/"
-src_clean_dir = "../classified_sound_1115/nature/clean/"
-target_mixed_dir = "../nature/mixed/"
-target_clean_dir = "../nature/clean/"
+class_name = "machine"
+
+src_mixed_dir = "C:/Users/USER/Desktop/ML_PJ_LOCAL/classified_sound_1115/" + class_name +"/mixed"
+src_clean_dir = "C:/Users/USER/Desktop/ML_PJ_LOCAL/classified_sound_1115/" + class_name +"/clean"
+
+target_mixed_dir = "C:/Users/USER/Desktop/ML_PROJECT/Introduction_to_Machine_Learning_Final_Project/"+ class_name +"/mixed/"
+target_clean_dir = "C:/Users/USER/Desktop/ML_PROJECT/Introduction_to_Machine_Learning_Final_Project/"+ class_name +"/clean/"
 
 # MelSpectrogram參數 (勿動)
 n_mels = 128                # 保持 Mel 頻譜圖的解析度
