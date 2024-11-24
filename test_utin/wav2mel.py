@@ -21,27 +21,25 @@ duration = 5                # 音頻時長為 5 秒
 
 def save_spectrogram_as_npy(spectrogram, save_path):
     """Save mel spectrogram as a NumPy array."""
-    os.system('cls')
-    print(f"Saving spectrogram as .npy file to {save_path}...")
+    # os.system('cls')
+    # print(f"Saving spectrogram as .npy file to {save_path}...")
     np.save(save_path, spectrogram)  # Save as .npy file
 
 def sound_to_spectrogram(mixed_dir, clean_dir, sample_rate, duration, n_mels):
     
-    length = 200
+    length = len(os.listdir(mixed_dir))
     filenames = sorted(os.listdir(mixed_dir))
 
     with alive_bar(length) as bar:
-        # for filename in sorted(os.listdir(mixed_dir)):
-        for i in range(length):
-            filename = filenames[i]
+        for filename in filenames:
             try:
                 # 使用完整路徑
                 mixed_path = os.path.join(mixed_dir, filename)
                 clean_path = os.path.join(clean_dir, filename)
                 
                 # 使用 soundfile 替代 librosa.load
-                mixed_waveform, sr = sf.read(mixed_path)
-                clean_waveform, sr = sf.read(clean_path)
+                mixed_waveform, sr = librosa.load(mixed_path)
+                clean_waveform, sr = librosa.load(clean_path)
                 
                 # 如果採樣率不匹配，進行重採樣
                 if sr != sample_rate:
@@ -49,10 +47,10 @@ def sound_to_spectrogram(mixed_dir, clean_dir, sample_rate, duration, n_mels):
                     clean_waveform = librosa.resample(clean_waveform, orig_sr=sr, target_sr=sample_rate)
                 
                 # 如果指定了持續時間，裁剪音頻
-                if duration:
-                    samples = int(duration * sample_rate)
-                    mixed_waveform = mixed_waveform[:samples]
-                    clean_waveform = clean_waveform[:samples]
+                # if duration:
+                #     samples = int(duration * sample_rate)
+                #     mixed_waveform = mixed_waveform[:samples]
+                #     clean_waveform = clean_waveform[:samples]
                 
                 # 生成梅爾頻譜圖
                 mixed_mel_spectrogram = librosa.feature.melspectrogram(
