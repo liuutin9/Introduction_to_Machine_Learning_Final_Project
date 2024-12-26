@@ -11,19 +11,38 @@ A final project from some NTHU EECS students that purpose to reduce audio noise 
 - nature
 
 ### The dataset after classified and classification model
-- classification_data
+- classification_data/
 
 ### The final training dataset we used
-- dataset
+- dataset/
 
 ### Test dataset
-- test_data
+- test_data/
+
+### Model
+- model/general_model.pth
+- model/general_model.ipynb
+- model/human_model.pth
+- model/human_model.ipynb
+- model/machine_model.pth
+- model/machine_model.ipynb
+- model/nature_model.pth
+- model/nature_model.ipynb
+
+### Prediction
+- model/model_test.ipynb
+
+### Transform to Mel from wav
+- wav2mel.py
 
 ### Demo input and output
-- demo_input
-- test_output
+#### Input
+- demo_input/demo.wav
+#### Output
+- test_output/general/denoise_demo.wav
+- test_output/human/denoise_demo.wav
+- test_output/machine/denoise_demo.wav
+- test_output/nature/denoise_demo.wav
 
 ### Visualization
-- visualization
-
-## Contribution
+- visualization/
